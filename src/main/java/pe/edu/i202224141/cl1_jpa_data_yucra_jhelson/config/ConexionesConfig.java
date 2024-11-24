@@ -21,10 +21,10 @@ public class ConexionesConfig {
         hikariConfig.setConnectionTimeout(45 * 1000L); // 45 segundos
 
         // Configuración de la base de datos desde variables de entorno
-        hikariConfig.setJdbcUrl(System.getenv("DB_WORLD_URL"));
-        hikariConfig.setUsername(System.getenv("DB_WORLD_USER"));
-        hikariConfig.setPassword(System.getenv("DB_WORLD_PASS"));
-        hikariConfig.setDriverClassName(System.getenv("DB_WORLD_DRIVER"));
+        hikariConfig.setJdbcUrl(System.getenv("jdbc:mysql://localhost:3306/world"));
+        hikariConfig.setUsername(System.getenv("root"));
+        hikariConfig.setPassword(System.getenv("123456"));
+        hikariConfig.setDriverClassName(System.getenv("com.mysql.cj.jdbc.Driver"));
 
         return new HikariDataSource(hikariConfig);
     }
